@@ -26,6 +26,12 @@ module GemExample
         end
         assert_equal 'Error!', e.message
       end
+
+      def test_another_example_method
+        example_class = AnotherExampleClass.new('hello')
+
+        assert_equal 'This method was untested', example_class.another_example_method
+      end
     end
   end
 end
