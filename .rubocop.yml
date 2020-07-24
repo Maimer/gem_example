@@ -1,0 +1,13 @@
+# Note:
+#
+# Please keep rules alphabetized within their sections (Style, Metrics, etc)
+# Please keep sections alphabetized and separated from other sections
+
+require:
+  - rubocop-minitest
+
+AllCops:
+  TargetRubyVersion: 2.6
+
+Style/Documentation:
+  Enabled: false

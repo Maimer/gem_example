@@ -1,0 +1,27 @@
+version: 2.1
+
+orbs:
+  coveralls: coveralls/coveralls@1.0.6
+
+commands:
+  bundle_install_and_test:
+    steps:
+      - checkout
+      - run: sudo gem update --system
+      - run: bundle install
+      - run: bundle exec rubocop
+      - run: bundle exec rake test
+      - coveralls/upload:
+          path_to_lcov: ./coverage/lcov/project.lcov
+
+jobs:
+  test-ruby-263:
+    steps:
+      - bundle_install_and_test
+    docker:
+      - image: circleci/ruby:2.6.3-node
+
+workflows:
+  rc:
+    jobs:
+      - test-ruby-263

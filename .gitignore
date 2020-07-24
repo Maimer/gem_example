@@ -1,0 +1,12 @@
+# Default ignored files
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# Ingore generated files
+Gemfile.lock
